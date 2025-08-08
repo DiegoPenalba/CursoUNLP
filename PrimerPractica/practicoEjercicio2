@@ -9,14 +9,13 @@ robots
   comenzar
     Pos(65,50)
     repetir 3
-    derecha
+      derecha
     si HayPapelEnLaBolsa
       depositarPapel
     repetir 42
       si HayPapelEnLaBolsa
         depositarPapel
       mover
-    Informar(PosAv)
   fin
 variables
   Rinfo: robot1
