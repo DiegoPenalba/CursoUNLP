@@ -1,0 +1,42 @@
+programa practicoEjercicio10Solucion1
+{Programe al robot para que recorra las 5 primeras avenidas juntando en cada esquina
+todas las flores y papeles..}
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    repetir 2
+      repetir 99
+        mientras HayPapelEnLaEsquina
+          tomarPapel
+        mientras HayFlorEnLaEsquina
+          tomarFlor
+        mover
+      derecha
+      mover
+      derecha
+      repetir 99
+        mientras HayPapelEnLaEsquina
+          tomarPapel
+        mientras HayFlorEnLaEsquina
+          tomarFlor
+        mover
+      repetir 3
+        derecha
+      mover
+      repetir 3
+        derecha
+    repetir 99
+      mientras HayPapelEnLaEsquina
+        tomarPapel
+      mientras HayFlorEnLaEsquina
+        tomarFlor
+      mover
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

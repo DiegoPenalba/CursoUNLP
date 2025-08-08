@@ -1,0 +1,22 @@
+programa practicoEjercicio4
+{Escriba un programa que le permita al robot recorrer el perímetro del cuadrado
+determinado por (1,1) y (2,2). Modificar el ejercicio 3. para que además recoja, de ser posible, un papel en cada
+esquina.}
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    repetir 4
+      si HayPapelEnLaEsquina
+        tomarPapel
+      mover
+      derecha
+    Informar(PosAv)
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

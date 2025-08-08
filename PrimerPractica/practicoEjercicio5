@@ -1,0 +1,18 @@
+programa practicoEjercicio5
+{Escriba un programa que le permita al robot dejar todas las flores que lleva en su
+bolsa en la esquina (50,50).}
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    Pos(50,50)
+    mientras HayFlorEnLaBolsa
+      depositarFlor
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

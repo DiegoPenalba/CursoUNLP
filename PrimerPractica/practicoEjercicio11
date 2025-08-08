@@ -1,0 +1,30 @@
+programa practicoEjercicio11
+{Programe al robot para que recorra el perímetro de la ciudad recogiendo todas las
+flores y papeles que encuentre y dejando en cada vértice solo un papel. Puede ocurrir
+que algún vértice quede vacío si el robot no tiene papeles en su bolsa para depositar.}
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    repetir 4
+      repetir 99
+        mover
+        mientras HayPapelEnLaEsquina
+          tomarPapel
+        mientras HayFlorEnLaEsquina
+          tomarFlor
+      mientras HayPapelEnLaEsquina
+        tomarPapel
+      mientras HayFlorEnLaEsquina
+        tomarFlor
+      derecha
+      si HayPapelEnLaBolsa
+        depositarPapel
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

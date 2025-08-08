@@ -1,0 +1,19 @@
+programa practicoEjercicio3
+{Escriba un programa que le permita al robot recorrer el perímetro del cuadrado
+determinado por (1,1) y (2,2).}
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    repetir 4
+      mover
+      derecha
+    Informar(PosAv)
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

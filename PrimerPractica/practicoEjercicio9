@@ -1,0 +1,24 @@
+programa practicoEjercicio9
+{Escriba un programa que le permita al robot recorrer la calle 17 depositando un papel
+en las avenidas impares. El recorrido termina cuando el robot llega a la esquina
+(100,17).}
+{consulta: Sabemos si tiene o no papeles suficientes?. Que hacer en caso de que no?}
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    Pos(1,17)
+    derecha
+    repetir 49
+      depositarPapel
+      mover
+      mover
+    mover
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin
