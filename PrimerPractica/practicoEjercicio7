@@ -12,6 +12,8 @@ robots
       si HayFlorEnLaBolsa
         depositarFlor
       mover
+    si HayFlorEnLaBolsa
+      depositarFlor
   fin
 variables
   Rinfo: robot1

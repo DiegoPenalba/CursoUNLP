@@ -13,6 +13,8 @@ robots
       mientras HayFlorEnLaEsquina
         tomarFlor
       mover
+    mientras HayFlorEnLaEsquina
+      tomarFlor
   fin
 variables
   Rinfo: robot1

@@ -1,0 +1,40 @@
+{Programe al robot para que informe la cantidad de flores que hay en la calle 44.
+I. Recogiendo todas las flores.
+II. Sin modificar el contenido de cada esquina.}
+
+programa Ejercicio2Practica3 
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    floresTotales : numero
+    floresEsquina : numero
+  comenzar
+    floresTotales := 0
+    Pos(1,44)
+    derecha
+    repetir 99
+      floresEsquina := 0
+      mientras (HayFlorEnLaEsquina)
+        tomarFlor
+        floresEsquina := floresEsquina + 1
+      floresTotales := floresTotales + floresEsquina
+      repetir floresEsquina
+        depositarFlor
+      mover
+    floresEsquina := 0
+    mientras (HayFlorEnLaEsquina)
+      tomarFlor
+      floresEsquina := floresEsquina + 1
+    floresTotales := floresEsquina + floresTotales
+    repetir floresEsquina
+      depositarFlor
+    Informar(floresTotales)
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

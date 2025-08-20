@@ -1,0 +1,36 @@
+{Programe al robot para que recorra la calle 2 hasta encontrar al menos 10 papeles. Pueden no haber 10 papeles.}
+
+programa Ejercicio8Practica3 
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    papelesEsquina : numero
+    esquina6papeles : numero
+  comenzar
+    esquina6papeles := 0
+    Pos(1,34)
+    derecha
+    repetir 99
+      papelesEsquina := 0
+      mientras HayPapelEnLaEsquina
+        tomarPapel
+        papelesEsquina := papelesEsquina + 1
+      si (papelesEsquina = 6)
+        esquina6papeles := esquina6papeles + 1
+      mover
+    papelesEsquina := 0
+    mientras HayPapelEnLaEsquina
+      tomarPapel
+      papelesEsquina := papelesEsquina + 1
+    si (papelesEsquina = 6)
+      esquina6papeles := esquina6papeles + 1
+    Informar(esquina6papeles)
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

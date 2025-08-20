@@ -1,0 +1,34 @@
+{Programe al robot para que informe la cantidad de esquinas vacías que hay en la
+ciudad.}
+
+programa Ejercicio3Practica3 
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    esquinasVacias : numero
+  comenzar
+    esquinasVacias := 0
+    repetir 99
+      repetir 99
+        si ~((HayFlorEnLaEsquina) | (HayPapelEnLaEsquina))
+          esquinasVacias := esquinasVacias + 1
+        mover
+      si ~((HayFlorEnLaEsquina) | (HayPapelEnLaEsquina))
+        esquinasVacias := esquinasVacias + 1
+      Pos( PosAv + 1, 1)
+    repetir 99
+      si ~((HayFlorEnLaEsquina) | (HayPapelEnLaEsquina))
+        esquinasVacias := esquinasVacias + 1
+      mover
+    si ~((HayFlorEnLaEsquina) | (HayPapelEnLaEsquina))
+      esquinasVacias := esquinasVacias + 1
+    Informar(esquinasVacias)
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

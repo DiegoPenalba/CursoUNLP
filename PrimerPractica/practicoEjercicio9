@@ -10,10 +10,13 @@ robots
   comenzar
     Pos(1,17)
     derecha
-    repetir 49
+    si HayPapelEnLaBolsa
       depositarPapel
+    repetir 49
       mover
       mover
+      si HayPapelEnLaBolsa
+        depositarPapel
     mover
   fin
 variables

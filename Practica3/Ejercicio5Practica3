@@ -1,0 +1,25 @@
+{Escriba un programa que le permita al robot caminar por la calle 7 hasta encontrar 20 flores. Hay como máximo una flor por esquina. Pueden no haber 20 flores}
+
+programa Ejercicio5Practica3 
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    floresEncontradas : numero
+  comenzar
+    floresEncontradas := 0
+    Pos(1,7)
+    derecha
+    mientras ((floresEncontradas < 20) & (PosAv < 100))
+      si HayFlorEnLaEsquina
+        tomarFlor
+        floresEncontradas := floresEncontradas + 1
+      mover
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin
