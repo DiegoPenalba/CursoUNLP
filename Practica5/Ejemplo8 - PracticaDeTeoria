@@ -1,0 +1,43 @@
+{Ejercicio 1: Programe al robot para que recorra todas las calles (completas) de la ciudad juntando todos los papeles.  Adaptar la solución del ejemplo 8. }
+
+{Ejercicio 2: Programe al robot para que recorra todas las esquinas de la ciudad.  En cada una debe juntar todos los papeles y las flores, y luego debe dejar: }
+{Una flor, en caso de haber más flores que papeles. }
+{Un papel, en caso de haber más papeles que flores }
+{Un papel y una flor, en cualquier otro caso. }
+{Implementar un módulo Evaluar que procese una esquina}
+
+{Programe al robot para que recorra la ciudad de la siguiente manera: Debe recorrer por avenidas, juntando en las avenidas impares todas las flores que encuentre mientras que en las pares debe hacerlo juntando todos los papeles que encuentre}
+
+
+programa Ejemplo8
+procesos
+  proceso JuntarPapeles
+  comenzar
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+  fin
+  proceso Calle
+  comenzar
+    repetir 14
+      JuntarPapeles
+      mover
+    JuntarPapeles
+  fin
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    derecha
+    repetir 10
+      Calle
+    Pos(1, PosCa + 1)
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo, ciudad)
+  Iniciar(Rinfo,1,1)
+fin
+
+

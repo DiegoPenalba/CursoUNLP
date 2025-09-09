@@ -1,0 +1,50 @@
+{Ejercicio7a: Escriba el proceso LimpiarEsquina que le permita al robot recoger todas las flores y todos los papeles de la esquina donde se encuentra parado}
+{Ejercicio7b: Escriba un programa que le permita al robot recoger todas las flores y papeles de la avenida 89 utilizando procesos implementados en 7.a}
+
+
+programa ejercicio7aPractica5
+procesos
+  proceso JuntarFlores
+  comenzar
+    {mientras haya flores juntarlas}
+    mientras HayFlorEnLaEsquina
+      tomarFlor
+  fin
+  
+  proceso JuntarPapeles
+  comenzar
+    {mientras haya Papeles juntarlos}
+    mientras HayPapelEnLaEsquina
+      tomarPapel
+  fin
+  
+  proceso LimpiarEsquina
+  comenzar
+  {junta todas las flores y papeles que haya}
+    JuntarFlores
+    JuntarPapeles
+  fin
+  
+  proceso LimpiarAvenida
+  comenzar
+    repetir 99
+      LimpiarEsquina
+      mover
+    LimpiarEsquina
+  fin
+  
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    {programa principal}
+    Pos(89, 1)
+    LimpiarAvenida
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info,1,1)
+fin

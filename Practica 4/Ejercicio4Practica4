@@ -1,0 +1,34 @@
+{Programar al robot para que recorra la calle 20 e informe cuántas esquinas tienen sólo flores y cuántas esquinas tienen sólo papeles.}
+
+programa Ejercicio4Practica4
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    soloFlores : numero
+    soloPapeles : numero
+  comenzar
+    soloFlores := 0
+    soloPapeles := 0
+    Pos(1,20)
+    derecha
+    repetir 99
+      si ((~HayPapelEnLaEsquina) & (HayFlorEnLaEsquina))
+        soloFlores := soloFlores + 1
+      si ((HayPapelEnLaEsquina) & (~HayFlorEnLaEsquina))
+        soloPapeles := soloPapeles + 1
+      mover
+    si ((~HayPapelEnLaEsquina) & (HayFlorEnLaEsquina))
+      soloFlores := soloFlores + 1
+    si ((HayPapelEnLaEsquina) & (~HayFlorEnLaEsquina))
+      soloPapeles := soloPapeles + 1
+    Informar(soloFlores)
+    Informar(soloPapeles)
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

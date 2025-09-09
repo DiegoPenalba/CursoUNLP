@@ -1,0 +1,71 @@
+{Ejercicio 2: Programe al robot para que recorra todas las esquinas de la ciudad.  En cada una debe juntar todos los papeles y las flores, y luego debe dejar: }
+{Una flor, en caso de haber más flores que papeles. }
+{Un papel, en caso de haber más papeles que flores }
+{Un papel y una flor, en cualquier otro caso. }
+
+{Implementar un módulo Evaluar que procese una esquina}
+
+
+programa Ejemplo8Punto2
+procesos
+
+  proceso EvaluarEsquina
+
+  variables
+    floresEsq : numero
+    papelesEsq : numero
+
+  comenzar
+    floresEsq := 0
+    papelesEsq := 0
+
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+      floresEsq := floresEsq + 1
+
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+      papelesEsq := papelesEsq + 1
+
+{pregunta: Aca se supone que hay suficientes papeles o flores en la bolsa?}
+
+    si floresEsq > papelesEsq
+      depositarFlor
+    si papelesEsq > floresEsq
+      depositarPapel
+    sino
+      depositarFlor
+      depositarPapel
+
+  fin
+  
+  proceso Calle
+  comenzar
+    repetir 99
+      EvaluarEsquina
+      mover
+    EvaluarEsquina
+  fin
+  
+areas
+  ciudad: AreaC(1,1,100,100)
+  
+robots
+  robot robot1
+  comenzar
+    derecha
+    repetir 99
+      Calle
+      Pos(1, PosCa + 1)
+    Calle
+  fin
+  
+variables
+  Rinfo: robot1
+
+comenzar
+  AsignarArea(Rinfo, ciudad)
+  Iniciar(Rinfo,1,1)
+fin
+
+

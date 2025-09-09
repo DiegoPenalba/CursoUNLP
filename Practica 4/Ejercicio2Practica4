@@ -1,0 +1,22 @@
+{Programar al robot para que recorra la calle 3 desde la avenida 5 hasta la avenida 20 depositando un papel en cada esquina. Si durante el recorrido se queda sin papeles para depositar, debe detenerse.}
+
+programa Ejercicio1Practica4
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    Pos(5,3)
+    derecha
+    mientras ((PosAv < 20) & (HayPapelEnLaBolsa))
+      depositarPapel
+      mover
+    si HayPapelEnLaBolsa
+      depositarPapel
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

@@ -1,0 +1,43 @@
+{Ejercicio3: Escriba un proceso que le permita al robot realizar un rectangulo de base 5, altura 3 girando en la direccion de las agujas del reloj a partir de la posicion 1,1}
+{Ejercicio4: Realizar recorridos descriptos en imagen 5.10}
+
+programa ejercicio4aPractica5
+procesos
+  proceso Base
+  comenzar
+    repetir 5
+      mover
+  fin
+  
+  proceso Altura
+  comenzar
+    repetir 3
+      mover
+  fin
+  
+  proceso Rectangulo
+  comenzar
+  {realizar proceso}
+    repetir 2
+      Altura
+      derecha
+      Base
+      derecha
+  fin
+  
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    {programa principal}
+    repetir 3
+      Rectangulo
+      Pos(1, PosCa + 4)
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info,1,1)
+fin

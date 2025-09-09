@@ -6,27 +6,20 @@ areas
 robots
   robot robot1
   variables
-    papelesEsquina : numero
-    esquina6papeles : numero
+    papeles : numero
   comenzar
-    esquina6papeles := 0
+    papeles := 0
     Pos(1,34)
     derecha
     repetir 99
-      papelesEsquina := 0
-      mientras HayPapelEnLaEsquina
+      mientras ((HayPapelEnLaEsquina) & (papeles <= 10))
         tomarPapel
-        papelesEsquina := papelesEsquina + 1
-      si (papelesEsquina = 6)
-        esquina6papeles := esquina6papeles + 1
+        papeles := papeles + 1
       mover
-    papelesEsquina := 0
-    mientras HayPapelEnLaEsquina
+    papeles := 0
+    mientras ((HayPapelEnLaEsquina) & (papeles <= 10))
       tomarPapel
-      papelesEsquina := papelesEsquina + 1
-    si (papelesEsquina = 6)
-      esquina6papeles := esquina6papeles + 1
-    Informar(esquina6papeles)
+      papeles := papeles + 1
   fin
 variables
   Rinfo: robot1

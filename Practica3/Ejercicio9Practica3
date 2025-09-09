@@ -1,0 +1,38 @@
+{Programe al robot para que recorra la calle 2 hasta encontrar 10 papeles y 4 flores. Seguro existen dichas cantidades.}
+
+programa Ejercicio9Practica3 
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    floresEncontradas : numero
+    papelesEncontrados : numero
+  comenzar
+    floresEncontradas := 0
+    papelesEncontrados := 0
+    Pos(1,2)
+    derecha
+    
+    mientras ((HayFlorEnLaEsquina) & (floresEncontradas < 4))
+      tomarFlor
+      floresEncontradas := floresEncontradas + 1
+    mientras ((HayPapelEnLaEsquina) & (papelesEncontrados < 10))
+      tomarPapel
+      papelesEncontrados := papelesEncontrados + 1
+    mientras ((floresEncontradas < 4) | (papelesEncontrados < 10))
+      mover
+      mientras ((HayFlorEnLaEsquina) & (floresEncontradas < 4))
+        tomarFlor
+        floresEncontradas := floresEncontradas + 1
+        
+      mientras ((HayPapelEnLaEsquina) & (papelesEncontrados < 10))
+        tomarPapel
+        papelesEncontrados := papelesEncontrados + 1
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

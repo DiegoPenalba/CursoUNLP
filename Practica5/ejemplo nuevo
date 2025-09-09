@@ -1,0 +1,52 @@
+programa Ejemplo6
+procesos
+  proceso Izquierda
+  comenzar
+    repetir 3
+      derecha
+  fin
+  proceso Atras
+  comenzar
+    repetir 2
+      derecha
+  fin
+  proceso EscalonDer
+  comenzar
+    repetir 2
+      repetir 3
+        mover
+      derecha
+  fin
+  proceso EscalonIzq
+  comenzar
+    repetir 2
+      repetir 3
+        mover
+      Izquierda
+  fin
+  proceso Cruz
+  comenzar
+    repetir 2
+      EscalonIzq
+      Atras
+      repetir 2
+        EscalonDer
+        Atras
+      Atras
+  fin
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    Pos(10,10)
+    repetir 3
+      Cruz
+      Pos(PosAv + 10, PosCa)
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo, ciudad)
+  Iniciar(Rinfo,1,1)
+fin

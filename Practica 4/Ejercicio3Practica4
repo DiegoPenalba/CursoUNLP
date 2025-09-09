@@ -1,0 +1,25 @@
+{Suponiendo que el robot cuenta con suficiente cantidad de flores y papeles en su bolsa, escribir un programa que le permita recorrer la calle 45 dejando en las avenidas pares solo una flor y en las impares solo un papel.}
+
+programa Ejercicio3Practica4
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    Pos(1,45)
+    derecha
+    repetir 49
+      depositarPapel
+      mover
+      depositarFlor
+      mover
+    depositarPapel
+    mover
+    depositarFlor
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

@@ -1,0 +1,29 @@
+{Ejercicio1: Escriba un proceso que le permita al robot realizar un cuadrado de lado 2 girando en la direccion de las agujas del reloj}
+{Ejercicio2: Utilice el proceso desarrollado en 1 para realizar un programa para cada uno de los recorridos (figura5.9)}
+
+programa ejercicio2bPractica5
+procesos
+  proceso Cuadrado
+  comenzar
+  {realizar proceso}
+    repetir 4
+      mover
+      mover
+      derecha
+  fin
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    {programa principal}
+    repetir 2
+      Cuadrado
+      Pos(1, PosCa + 3)
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info,1,1)
+fin

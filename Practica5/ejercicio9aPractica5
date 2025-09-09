@@ -1,0 +1,51 @@
+{Ejercicio9(a) Implemente un proceso para que el robot recorra una avenida juntando flores y se detenga cuando haya juntado 30 flores (seguro existe dicha cantidad).}
+{Ejercicio9(b) Modifique el proceso implementado en (a) sabiendo que las 30 flores pueden no existir.}
+{Ejercicio9(c) Implemente un programa que recorra todas las avenidas de la ciudad, utilizando el proceso implementado en (a).}
+
+
+programa ejercicio9aPractica5
+procesos
+  proceso JuntarHasta30Flores
+  variables
+    floresTotales : numero
+  comenzar
+    {inicializa variable}
+    floresTotales := 0
+    {se ejecuta cuando no haya llegado a la ultima calle o no tenga 30 flores)
+    mientras (floresTotales < 30) & (PosCa < 100)
+      {se ejecuta si hay flor y no tiene 30}
+      mientras ((HayFlorEnLaEsquina) & (floresTotales < 30))
+        tomarFlor
+        {suma una flor}
+        floresTotales := floresTotales + 1
+      {solo se mueve si aun no tiene 30 flores}
+      si (floresTotales < 30)
+        mover
+  fin
+  
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    junto30 : boolean
+  comenzar
+    {programa principal}
+    
+    junto30 := F
+    mientras ~(junto30) & (PosAv <= 100)
+      JuntarHasta30Flores
+      si (PosCa = 100) & ~(junto30)
+        si (PosAv < 100)
+          Pos(PosAv + 1, 1)
+        sino
+          junto30 := V
+      sino
+        junto30 := V
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info,1,1)
+fin

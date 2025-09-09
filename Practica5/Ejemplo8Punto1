@@ -1,0 +1,42 @@
+{Ejercicio 1: Programe al robot para que recorra todas las calles (completas) de la ciudad juntando todos los papeles.  Adaptar la solución del ejemplo 8. }
+
+
+programa Ejemplo8Punto1
+procesos
+
+  proceso JuntarPapeles
+  comenzar
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+  fin
+  
+  proceso Calle
+  comenzar
+    repetir 99
+      JuntarPapeles
+      mover
+    JuntarPapeles
+  fin
+  
+areas
+  ciudad: AreaC(1,1,100,100)
+  
+robots
+  robot robot1
+  comenzar
+    derecha
+    repetir 99
+      Calle
+      Pos(1, PosCa + 1)
+    Calle
+  fin
+  
+variables
+  Rinfo: robot1
+
+comenzar
+  AsignarArea(Rinfo, ciudad)
+  Iniciar(Rinfo,1,1)
+fin
+
+

@@ -1,0 +1,30 @@
+programa Ejemplo4
+procesos
+  proceso Espiral
+  variables
+    tamanio: numero
+  comenzar
+    tamanio := 1
+    repetir 4
+      repetir 2
+        repetir tamanio
+          mover
+        derecha
+      tamanio := tamanio + 1      
+  fin
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    Pos(3,4)
+    repetir 5
+      Espiral
+      Pos(PosAv + 7, 4)
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo, ciudad)
+  Iniciar(Rinfo,1,1)
+fin

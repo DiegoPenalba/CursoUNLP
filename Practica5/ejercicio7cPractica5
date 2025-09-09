@@ -1,0 +1,79 @@
+{Ejercicio7c: Modifique el proceso 6a para que el robot realice el rectangulo indicado dejando a su paso todas las esquinas vacias Para hacerlo utilice el proceso LimpiarEsquina}
+
+
+programa ejercicio7cPractica5
+procesos
+  proceso JuntarFlores
+  comenzar
+    {mientras haya flores juntarlas}
+    mientras HayFlorEnLaEsquina
+      tomarFlor
+  fin
+  
+  proceso JuntarPapeles
+  comenzar
+    {mientras haya Papeles juntarlos}
+    mientras HayPapelEnLaEsquina
+      tomarPapel
+  fin
+  
+  proceso LimpiarEsquina
+  comenzar
+  {junta todas las flores y papeles que haya}
+    JuntarFlores
+    JuntarPapeles
+  fin
+  
+  proceso LimpiarAvenida
+  comenzar
+    repetir 99
+      LimpiarEsquina
+      mover
+    LimpiarEsquina
+  fin
+  
+  proceso Base
+  comenzar
+    repetir 5
+      LimpiarEsquina
+      mover
+  fin
+  
+  proceso Altura
+  comenzar
+    repetir 3
+      LimpiarEsquina
+      mover
+  fin
+  
+  proceso Izquierda
+  comenzar
+    repetir 3
+      derecha
+  fin
+  
+  proceso Rectangulo
+  comenzar
+  {realizar proceso}
+    derecha
+    repetir 2
+      Base
+      Izquierda
+      Altura
+      Izquierda
+  fin
+  
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    {programa principal}
+    Rectangulo
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info,1,1)
+fin

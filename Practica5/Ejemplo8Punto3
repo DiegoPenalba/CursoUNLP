@@ -1,0 +1,57 @@
+{Programe al robot para que recorra la ciudad de la siguiente manera: Debe recorrer por avenidas, juntando en las avenidas impares todas las flores que encuentre mientras que en las pares debe hacerlo juntando todos los papeles que encuentre}
+
+
+programa Ejemplo8Punto3
+procesos
+
+  proceso JuntarPapeles
+  comenzar
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+  fin
+  
+  proceso JuntarFlores
+  comenzar
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+  fin
+  
+  proceso AvenidaPar
+  comenzar
+    repetir 99
+      JuntarPapeles
+      mover
+    JuntarPapeles
+  fin
+  
+  proceso AvenidaImpar
+  comenzar
+    repetir 99
+      JuntarFlores
+      mover
+    JuntarFlores
+  fin
+  
+areas
+  ciudad: AreaC(1,1,100,100)
+  
+robots
+  robot robot1
+  comenzar
+    repetir 49
+      AvenidaImpar
+      Pos(PosAv + 1, 1)
+      AvenidaPar
+      Pos(PosAv + 1, 1)
+    AvenidaImpar
+    Pos(PosAv + 1, 1)
+    AvenidaPar
+  fin
+  
+variables
+  Rinfo: robot1
+
+comenzar
+  AsignarArea(Rinfo, ciudad)
+  Iniciar(Rinfo,1,1)
+fin

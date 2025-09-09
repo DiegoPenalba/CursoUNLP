@@ -1,0 +1,49 @@
+{Ejercicio6a: Escriba un proceso que le permita al robot realizar un rectangulo de base 5, altura 3 girando en la direccion CONTRARIA de las agujas del reloj a partir de la posicion 1,1 (se supone, para consistencia con el ejercicio 3)}
+{Ejercicio6b: Indique si se produce alguna modificacion en los procesos de los ejercicios 4 y 5 si se reemplaza el modulo realizado en 3 por el implementado en 6.a}
+{Respuesta: }
+
+programa ejercicio6aPractica5
+procesos
+  proceso Base
+  comenzar
+    repetir 5
+      mover
+  fin
+  
+  proceso Altura
+  comenzar
+    repetir 3
+      mover
+  fin
+  
+  proceso Izquierda
+  comenzar
+    repetir 3
+      derecha
+  fin
+  
+  proceso Rectangulo
+  comenzar
+  {realizar proceso}
+    derecha
+    repetir 2
+      Base
+      Izquierda
+      Altura
+      Izquierda
+  fin
+  
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    {programa principal}
+    Rectangulo
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info,1,1)
+fin

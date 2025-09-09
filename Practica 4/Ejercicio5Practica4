@@ -1,0 +1,23 @@
+{Programar al robot para que recorra el perímetro de la ciudad dejando un papel en aquellas esquinas que sólo tienen papel y una flor en las esquinas que tienen sólo flores. El recorrido debe finalizar al terminar de recorrer el perímetro.}
+
+programa Ejercicio5Practica4
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    repetir 4
+      repetir 99
+        si ((~HayPapelEnLaEsquina) & (HayFlorEnLaEsquina))
+          depositarFlor
+        si ((HayPapelEnLaEsquina) & (~HayFlorEnLaEsquina))
+          depositarPapel
+        mover
+      derecha
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin
