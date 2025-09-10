@@ -1,0 +1,36 @@
+{Ejercicio11: Programe el reloj para que realice el recorido utilizando un proceso que le permita realizar un escalon}
+
+
+programa ejercicio11Practica5
+procesos
+  proceso Izquierda
+  comenzar
+    repetir 3
+      derecha
+  fin
+  
+  proceso Escalon
+  comenzar
+    repetir 2
+      mover
+    derecha
+    repetir 2
+      mover
+    Izquierda
+  fin
+  
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    {programa principal}
+    repetir 3
+      Escalon
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info,1,1)
+fin

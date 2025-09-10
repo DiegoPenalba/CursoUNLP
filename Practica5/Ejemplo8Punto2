@@ -34,8 +34,10 @@ procesos
     si papelesEsq > floresEsq
       depositarPapel
     sino
-      depositarFlor
-      depositarPapel
+      si (HayPapelEnLaBolsa)
+        depositarPapel
+      si (HayFlorEnLaBolsa)
+        depositarFlor
 
   fin
   

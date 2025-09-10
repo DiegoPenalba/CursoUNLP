@@ -3,7 +3,7 @@
 {Ejercicio10(c) Implemente un programa que recorra todas las calles de la ciudad, utilizando el proceso implementado en (b).}
 
 
-programa ejercicio10Practica5
+programa ejercicio10cPractica5
 procesos
   proceso EncontrarPapel
   variables
@@ -20,6 +20,12 @@ procesos
   fin
   
   proceso Calle
+  comenzar
+    mientras (PosAv < 100) & ~HayPapelEnLaEsquina
+      EncontrarPapel
+    si PosAv = 100
+      Informar(999)
+  fin
   
   
 areas
@@ -29,10 +35,9 @@ robots
   comenzar
     {programa principal}
     derecha
-    mientras (PosAv < 100) & ~HayPapelEnLaEsquina
-      EncontrarPapel
-    si PosAv = 100
-      Informar(999)
+    repetir 99
+      Calle
+      Pos(1, PosCa + 1)
   fin
 variables
   R_info: robot1

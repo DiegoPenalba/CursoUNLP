@@ -24,14 +24,6 @@ procesos
     JuntarPapeles
   fin
   
-  proceso LimpiarAvenida
-  comenzar
-    repetir 99
-      LimpiarEsquina
-      mover
-    LimpiarEsquina
-  fin
-  
   proceso Base
   comenzar
     repetir 5
