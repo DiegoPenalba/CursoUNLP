@@ -1,0 +1,41 @@
+{Programe al robot para que realice un módulo Avenida que recorra una avenida,
+cuyo número se ingresa como parámetro, hasta dar tantos pasos como los indicados
+por otro parámetro de entrada que este módulo recibe. Es decir, si recibe los valores
+3 y 1, debe dar 1 paso en la avenida 3; si recibe 12 y 5 debe dar 5 pasos en la
+avenida 12; y así sucesivamente. En cambio, si recibe algún valor negativo no debe
+dar pasos. Considere que la cantidad máxima de pasos que podrá dar es 99,
+cualquier valor que reciba mayor que 99, implicará realizar sólo hasta 99 pasos. Los
+números de avenida seguro son entre 1 y 100.}
+
+programa Ejercicio8Practica6
+procesos
+  proceso Avenida(E avenida: numero ; E pasos: numero)
+  variables
+    pasosRealizados : numero
+  comenzar
+    Pos(avenida, 1)
+    pasosRealizados := 0
+    {Agrego esta condicion para asegurar que por mas que se pongan mas pasos, estos solo seran 99}
+    si pasos > 99
+      pasos := 99
+    mientras (PosAv < 100) & (pasosRealizados < pasos)
+      mover
+      pasosRealizados := pasosRealizados + 1
+  fin
+areas
+  ciudad: AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    avenida, pasos : numero
+  comenzar
+    avenida := 2
+    pasos := 999
+    Avenida(avenida, pasos)
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info, 1,1)
+fin

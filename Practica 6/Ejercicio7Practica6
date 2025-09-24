@@ -1,0 +1,39 @@
+{Programe al robot para que realice un módulo CalleFlor que recorra una calle cuyo
+número se ingresa como parámetro, hasta juntar tantas flores como lo indica otro
+parámetro de entrada que este módulo recibe. La cantidad de flores seguro existe.}
+
+programa Ejercicio7Practica6
+procesos
+  proceso CalleFlor(E calle: numero ; E limiteFlores: numero)
+  variables
+    floresJuntadas : numero
+  comenzar
+    Pos(1, calle)
+    floresJuntadas := 0
+    derecha
+    mientras (PosAv < 100) & (floresJuntadas < limiteFlores)
+      mientras HayFlorEnLaEsquina & (floresJuntadas < limiteFlores)
+        tomarFlor
+        floresJuntadas := floresJuntadas + 1
+      mover
+    mientras HayFlorEnLaEsquina & (floresJuntadas < limiteFlores)
+      tomarFlor
+      floresJuntadas := floresJuntadas + 1    
+  fin
+areas
+  ciudad: AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    calle, limiteFlores : numero
+  comenzar
+    calle := 2
+    limiteFlores := 10
+    CalleFlor(calle, limiteFlores)
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info, 1,1)
+fin

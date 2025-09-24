@@ -1,0 +1,37 @@
+{Hacer el ejemplo en clase, se suma 1 a calle, 1 a avenida, y tiene que hacer 5 torres}
+{una variante es que haga una torre de L. que es el lado del cuadrado, es decir, el de 1x1 uno solo, 2x2, y asi}
+
+programa Ejemplo1TeoriaTorreCuadrado
+procesos
+  proceso Cuadrado(E Lado: numero)
+  comenzar
+    repetir 4
+      repetir Lado
+        mover
+      derecha
+  fin
+  proceso Torre(E L: numero)
+  comenzar
+    repetir L
+      Cuadrado(L)
+      Pos(PosAv, PosCa + L)
+  fin
+areas
+  ciudad: AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    L: numero
+  comenzar
+    L := 1
+    repetir 5{repetir L caso 2}
+      Torre(L)
+      Pos(PosAv + L, 1)
+      L := L + 1
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info, 1,1)
+fin

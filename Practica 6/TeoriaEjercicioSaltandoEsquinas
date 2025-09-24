@@ -1,0 +1,78 @@
+{Programe al robot para que vaya saltando por las esquinas (1,1), (2,2), (3,3) y así siguiendo hasta encontrar una esquina sin flores, que seguro existe. En cada una, debe contar las flores, y analizar:
+- si hay más de 10 flores, debe caminar por la avenida actual
+tantos pasos como cantidad de flores.
+- si hay menos, debe caminar por la calle actual tantos pasos
+como cantidad de flores.
+Atención: que el robot no se caiga de la ciudad.}
+
+
+programa TeoriaEjercicioSaltandoEsquinas
+procesos
+
+  proceso Izquierda
+  comenzar
+    repetir 3
+      derecha
+  fin
+  
+  proceso DepositarFlor(E flores: numero)
+  variables
+    floresInt: numero
+  comenzar
+    floresInt:= flores
+    mientras floresInt > 0
+      depositarFlor
+      floresInt:= floresInt - 1
+  fin
+    
+  proceso Calle(E pasos: numero)
+  variables
+    pasosInt: numero
+  comenzar
+    pasosInt:= pasos
+    mientras (PosAv < 100) & (pasosInt > 0)
+      mover
+      pasosInt := pasosInt - 1
+  fin
+  
+  proceso Avenida(E pasos: numero)
+  variables
+    pasosInt : numero
+  comenzar
+    pasosInt:= pasos
+    mientras (PosCa < 100) & (pasosInt > 0)
+      mover
+      pasosInt := pasosInt - 1
+  fin
+  
+areas
+  ciudad: AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    flores: numero
+    esquina: numero
+  comenzar
+    esquina := 98
+    Pos(esquina, esquina)
+    mientras (HayFlorEnLaEsquina) & (esquina < 100)
+      flores := 0
+      mientras HayFlorEnLaEsquina
+        tomarFlor
+        flores:= flores + 1
+      DepositarFlor(flores)
+      si (flores < 10)
+        derecha
+        Calle(flores)
+        Izquierda
+      sino
+        Avenida(flores)
+      esquina:= esquina + 1
+      Pos(esquina, esquina)
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info, 1,1)
+fin

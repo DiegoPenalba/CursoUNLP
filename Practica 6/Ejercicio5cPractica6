@@ -1,0 +1,47 @@
+{Programe al robot para que realice cada uno de los cuatro recorridos de la figura 6.7.}
+
+programa Ejercicio5cPractica6
+procesos
+  proceso MirarHaciaArriba
+  comenzar
+    repetir 3
+      derecha
+  fin
+  proceso HacerAltura(E altura: numero)
+  comenzar
+    repetir altura
+      mover  
+  fin
+  proceso HacerBase(E base: numero)
+  comenzar
+    repetir base
+      mover  
+  fin
+  proceso Escalon(E altura: numero; E base: numero)
+  comenzar
+    HacerAltura(altura)
+    derecha
+    HacerBase(base)
+  fin
+areas
+  ciudad: AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    altura: numero
+    base: numero
+  comenzar
+    altura := 3
+    base := 2
+    repetir 3
+      Escalon(altura, base)
+      MirarHaciaArriba
+      altura := altura - 1
+      base := base + 1 
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info, 1,1)
+fin

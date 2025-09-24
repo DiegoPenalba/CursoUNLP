@@ -1,0 +1,50 @@
+{Ejercicio 2: Programe al robot para que recorra cuadrados. El primero debe ser de lado 2. Luego, el lado de cada cuadrado y el punto de inicio quedan determinados por la esquina actual, de la siguiente manera:
+si hay flores y papeles, el lado debe ser 2 y debe empezar en el vértice superior
+derecho del cuadrado actual.
+si hay solamente flores, el lado debe ser 4, y debe empezar en el vértice superior
+izquierdo del cuadrado actual.
+si hay solamente papeles, el lado debe ser 3 y debe empezar en el vértice inferior derecho del cuadrado actual.
+Debe detenerse cuando la esquina actual esté vacía (seguro existe).}
+
+
+programa TeoriaEjercicioCuadradoSegunEsquina
+procesos
+  proceso Cuadrado(E lado: numero)
+  comenzar
+    repetir 4
+      repetir lado
+        mover
+      derecha
+  fin
+areas
+  ciudad: AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    ladoActual: numero
+    ladoAnterior: numero
+  comenzar
+    ladoActual := 2
+    Cuadrado(ladoActual)
+    mientras HayFlorEnLaEsquina | HayPapelEnLaEsquina
+      ladoAnterior:= ladoActual
+      si HayFlorEnLaEsquina & HayPapelEnLaEsquina
+        Pos(PosAv + ladoAnterior, PosCa + ladoAnterior)
+        ladoActual:= 2
+        Cuadrado(ladoActual)
+      sino
+        si HayFlorEnLaEsquina
+          Pos(PosAv, PosCa + ladoAnterior)
+          ladoActual:= 4
+          Cuadrado(ladoActual)
+        sino
+          Pos(PosAv + ladoAnterior, PosCa)
+          ladoActual:= 3
+          Cuadrado(ladoActual)
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info, 1,1)
+fin

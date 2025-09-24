@@ -1,6 +1,8 @@
-{Escriba un programa que le permita al robot caminar por la calle 7 hasta encontrar 20 flores. Hay como máximo una flor por esquina. Pueden no haber 20 flores}
+{Escriba un programa que le permita al robot caminar por la calle 7 hasta encontrar 20 flores. Hay como máximo una flor por esquina. Seguro existen 20 flores.}
+{No hay que tomar}
 
-programa Ejercicio5Practica3 
+programa Ejercicio4Practica3Solucion2
+ 
 areas
   ciudad: AreaC(1,1,100,100)
 robots
@@ -13,7 +15,7 @@ robots
     derecha
     si HayFlorEnLaEsquina
       floresEncontradas := floresEncontradas + 1
-    mientras ((floresEncontradas < 20) & (PosAv < 100))
+    mientras (floresEncontradas < 20)
       mover
       si HayFlorEnLaEsquina
         floresEncontradas := floresEncontradas + 1

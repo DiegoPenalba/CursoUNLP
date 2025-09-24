@@ -6,9 +6,11 @@ procesos
   proceso Cuadrado
   comenzar
   {realizar proceso}
-    mover
-    mover
-    derecha
+    repetir 4
+	repetir 2
+   	 mover
+   	 mover
+    	derecha
   fin
 areas
   ciudad: AreaC(1,1,100,100)
@@ -16,7 +18,9 @@ robots
   robot robot1
   comenzar
     {programa principal}
-    Cuadrado
+    Repetir 3
+    	Cuadrado
+	Pos(PosAv + 2, PosCa + 2)
   fin
 variables
   R_info: robot1

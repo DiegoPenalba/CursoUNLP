@@ -1,0 +1,29 @@
+{Escriba un proceso que le permita al robot recorrer una avenida cuyo número se
+ingresa como parámetro de entrada.}
+
+programa Ejercicio6dPractica6
+procesos
+  proceso RecorrerAvenidaNro(E avenida: numero)
+  comenzar
+    Pos(avenida, 1)
+    mientras (PosCa < 100)
+      mover
+  fin
+areas
+  ciudad: AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    avenida : numero
+  comenzar
+    avenida := 2
+    repetir 49
+      RecorrerAvenidaNro(avenida)
+      avenida := avenida + 2
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info, 1,1)
+fin

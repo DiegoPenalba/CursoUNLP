@@ -7,8 +7,8 @@ procesos
   comenzar
   {realizar proceso}
     repetir 4
-      mover
-      mover
+      repetir 2
+	mover
       derecha
   fin
 areas

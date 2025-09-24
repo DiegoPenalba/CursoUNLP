@@ -1,0 +1,47 @@
+{Escriba un proceso que le permita al Robot realizar un rectángulo a partir de la
+esquina donde está parado cuyas dimensiones, alto y ancho, se reciben.}
+{Utilice el proceso realizado en 3. para que el Robot efectúe los recorridos de la
+figura 6.6 a partir de (1,1).}
+
+programa Ejercicio4aPractica6
+procesos
+  proceso hacerBase(E base: numero)
+  comenzar
+    repetir base
+      mover
+  fin
+  proceso hacerAltura(E altura: numero)
+  comenzar
+    repetir altura
+      mover
+  fin
+  
+  proceso Rectangulo(E altura: numero; E base: numero)
+  comenzar
+    repetir 2
+      hacerAltura(altura)
+      derecha
+      hacerBase(base)
+      derecha
+  fin
+areas
+  ciudad: AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    altura: numero
+    base: numero
+  comenzar
+    altura := 1
+    base := 5
+    repetir 3
+      Rectangulo(altura, base)
+      Pos(PosAv + 1, PosCa + 2)
+      base := base - 2
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info, 1,1)
+fin

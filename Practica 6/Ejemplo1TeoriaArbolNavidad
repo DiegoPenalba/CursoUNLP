@@ -1,0 +1,39 @@
+programa EjemploArbolNavidad
+procesos
+  proceso Avenida (E pasos: numero)
+  comenzar
+    repetir pasos
+      mover
+  fin
+  proceso Triangulo
+  variables
+    P, caIni: numero
+  comenzar
+    P := 1
+    caIni := PosCa
+    repetir 10
+      Avenida(P)
+      Pos(PosAv + 1,caIni)
+      P := P + 1
+    repetir 10
+      P := P - 1
+      Avenida(P)
+      Pos(PosAv + 1,caIni)
+  fin
+areas
+  ciudad: AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    P: numero  
+  comenzar
+    repetir 3
+      Triangulo
+      Pos(1, PosCa + 10)
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info, 1,1)
+fin

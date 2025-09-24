@@ -12,14 +12,14 @@ procesos
     {inicializa variable}
     floresTotales := 0
     {se ejecuta cuando no haya llegado a la ultima calle o no tenga 30 flores)
-    mientras (floresTotales < 30) & (PosCa < 100)
+    mientras (floresTotales < 30)
       {se ejecuta si hay flor y no tiene 30}
       mientras ((HayFlorEnLaEsquina) & (floresTotales < 30))
         tomarFlor
         {suma una flor}
         floresTotales := floresTotales + 1
       {solo se mueve si aun no tiene 30 flores}
-      si (floresTotales < 30)
+      si (floresTotales < 30) & (PosCa < 100)
         mover
   fin
   

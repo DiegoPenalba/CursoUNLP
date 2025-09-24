@@ -1,0 +1,29 @@
+programa Ejemplo1TeoriaCuadrado
+procesos
+  proceso Cuadrado(E Lado: numero)
+  comenzar
+    repetir 4
+      repetir Lado
+        mover
+      derecha
+  fin
+areas
+  ciudad: AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    L: numero
+  comenzar
+    Pos(20,2)
+    L := 1
+    repetir 5
+      Cuadrado(L)
+      Pos(PosAv - 1, PosCa)
+      L := L + 2
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info, 1,1)
+fin

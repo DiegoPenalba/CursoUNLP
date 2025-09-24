@@ -1,0 +1,33 @@
+programa EjemploEspiral
+procesos
+  proceso Escalon(E lado: numero ; E base: numero) {nombre raro, podria ser altura, base. Lo dejo distinto para diferenciarlo de un rectangulo}
+  comenzar
+    repetir lado
+      mover
+    derecha
+    repetir base
+      mover
+    derecha
+  fin
+areas
+  ciudad: AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    lado: numero
+    base: numero
+  comenzar
+    Pos(50,50)
+    lado := 1
+    base := 1
+    repetir 10
+      Escalon(lado , base)
+      lado := lado + 1
+      base := base + 1
+  fin
+variables
+  R_info: robot1
+comenzar
+  AsignarArea(R_info, ciudad)
+  Iniciar(R_info, 1,1)
+fin

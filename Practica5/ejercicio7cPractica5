@@ -24,14 +24,14 @@ procesos
     JuntarPapeles
   fin
   
-  proceso Base
+  proceso BaseLimpia
   comenzar
     repetir 5
       LimpiarEsquina
       mover
   fin
   
-  proceso Altura
+  proceso AlturaLimpia
   comenzar
     repetir 3
       LimpiarEsquina
@@ -44,7 +44,7 @@ procesos
       derecha
   fin
   
-  proceso Rectangulo
+  proceso RectanguloLimpio
   comenzar
   {realizar proceso}
     derecha
@@ -61,7 +61,7 @@ robots
   robot robot1
   comenzar
     {programa principal}
-    Rectangulo
+    RectanguloLimpio
   fin
 variables
   R_info: robot1
